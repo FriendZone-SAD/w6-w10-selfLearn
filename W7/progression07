@@ -1,0 +1,62 @@
+ผมใช้ chatgpt ในการ gen โจทย์มาให้แล้วผมก็ทำตามโจทย์ที่ให้มาโดยผมบอกเนื้อหาที่เรียนมา
+
+---
+
+📝 Complex Practice Task – Week 2
+🎯 Objective
+
+ฝึกสร้าง / เปลี่ยนแปลง element, attribute, style และการ traverse DOM (parent, child, sibling)
+
+🏗 Starter HTML
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Week 2 Practice</title>
+  <style>
+    .highlight {
+      color: red;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 id="main-title">My Shopping List</h1>
+
+  <div id="shopping-container">
+    <ul id="shopping-list">
+      <li>Milk</li>
+      <li>Bread</li>
+      <li>Eggs</li>
+    </ul>
+  </div>
+
+  <div id="actions">
+    <button id="add-item">Add Item</button>
+    <button id="highlight-second">Highlight Second</button>
+    <button id="replace-first">Replace First</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+🧩 Tasks
+
+ให้คุณเขียนโค้ดใน script.js เพื่อทำสิ่งต่อไปนี้:
+
+Add Item
+เมื่อกดปุ่ม #add-item → เพิ่ม <li> ใหม่เข้าไปท้ายสุดใน #shopping-list (เช่น "New Item")
+
+Highlight Second
+เมื่อกดปุ่ม #highlight-second → หา <li> ตัวที่สอง แล้วเพิ่ม class "highlight" ให้มัน
+
+Replace First
+เมื่อกดปุ่ม #replace-first → ลบ <li> ตัวแรก แล้วแทนที่ด้วย <li>Replaced Item</li>
+
+Parent Traversal
+เขียนโค้ดที่เข้าถึง #shopping-list แล้ว console.log parent element ของมัน
+
+Sibling Traversal
+เขียนโค้ดที่เข้าถึง <li>Bread</li> แล้ว console.log next sibling (ควรเป็น "Eggs")
