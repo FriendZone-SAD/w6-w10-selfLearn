@@ -1,0 +1,93 @@
+ผมใช้ chatgpt ในการ gen โจทย์มาให้แล้วผมก็ทำตามโจทย์ที่ให้มาโดยผมบอกเนื้อหาที่เรียนมา
+
+---
+
+🧩 Week 3 Practice Tasks
+
+(From after traversal → end of slide)
+
+หัวข้อที่เราจะฝึกในสัปดาห์นี้คือ:
+
+Create / Remove nodes dynamically
+
+Modify attributes & styles
+
+Event handling (click, input, etc.)
+
+Event bubbling & delegation
+
+Simple interactive UI logic
+
+🏗 Starter HTML
+
+ให้ใช้โครงนี้ครับ (copy ทั้งหมดลงไฟล์ index.html)
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Week 3 Practice</title>
+  <style>
+    body {
+      font-family: sans-serif;
+    }
+    .done {
+      text-decoration: line-through;
+      color: gray;
+    }
+  </style>
+</head>
+<body>
+  <h1>🛒 My To-Do List</h1>
+
+  <input id="task-input" type="text" placeholder="Add new task...">
+  <button id="add-task">Add Task</button>
+
+  <ul id="task-list">
+    <li>Learn JavaScript</li>
+    <li>Review DOM</li>
+  </ul>
+
+  <button id="clear-all">Clear All</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+🧠 Practice Tasks
+1️⃣ Add Task (Create Node + Event)
+
+เมื่อกดปุ่ม #add-task →
+
+ดึงค่าจาก <input>
+
+สร้าง <li> ใหม่ แล้วเพิ่มเข้าใน <ul id="task-list">
+
+เคลียร์ช่อง input หลังเพิ่มเสร็จ
+
+2️⃣ Mark as Done (Toggle Class)
+
+เมื่อคลิก <li> ตัวใด ให้ toggle class "done" เพื่อขีดฆ่าข้อความนั้น
+💡 ใช้ addEventListener('click', …) กับ <ul> แล้วเช็ก event.target.tagName === 'LI'
+(อันนี้คือ event delegation)
+
+3️⃣ Delete Task (Remove Node)
+
+เมื่อคลิก <li> ที่มี class "done" → ให้ลบออกจาก list ทันที
+
+4️⃣ Clear All Tasks
+
+เมื่อกดปุ่ม #clear-all → ลบ <li> ทั้งหมดออกจาก <ul>
+
+5️⃣ Bonus – Keyboard Add
+
+ถ้าผู้ใช้พิมพ์ในช่อง <input> แล้วกด Enter (key = "Enter") → ให้ทำเหมือนกับกดปุ่ม Add Task
+
+💡 Hint Keywords:
+document.createElement()
+element.appendChild()
+element.remove()
+element.classList.toggle()
+event.target
+event.key
+ul.addEventListener('click', function(e) { … })
