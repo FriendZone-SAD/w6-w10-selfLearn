@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Event Practice</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        button {
+            padding: 10px 15px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .box {
+            width: 150px;
+            height: 150px;
+            background-color: #ffc107;
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid #e0a800;
+        }
+
+        p {
+            margin-top: 15px;
+            font-size: 1.1em;
+        }
+
+        input[type="text"] {
+            padding: 8px;
+            margin-top: 10px;
+            width: calc(100% - 18px);
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        #outer {
+            background-color: lightblue;
+            padding: 30px;
+        }
+
+        #inner {
+            background-color: lightcoral;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container" id="challenge-container">
+        <h1>Challenge 1: Basic Click</h1>
+        <button id="myBtn">Click Me!</button>
+        <p id="message">Waiting for a click...</p>
+        <h1>Challenge 2: Mouse Events</h1>
+        <div class="box" id="hoverBox">Hover over me!</div>
+        <h1>Challenge 3: Keyboard Input</h1>
+        <p>Type something in the box below and press Enter.</p>
+        <input type="text" id="textInput" placeholder="Your message...">
+        <p id="output">Your message will appear here.</p>
+        <h1>Challenge 4: Target vs CurrentTarget</h1>
+        <div id="outer">
+            Outer Div
+            <div id="inner">Inner Div</div>
+        </div>
+        <p>Target ID: <span id="target-id">?</span></p>
+        <p>Current Target ID: <span id="current-target-id">?</span></p>
+        <h1>Challenge 5: Add/Remove Listener</h1>
+        <button id="startBtn">Start Logging</button>
+        <button id="stopBtn">Stop Logging</button>
+        <p>Move your mouse over the window.</p>
+        <p id="coords">Mouse Coordinates: X=0, Y=0</p>
+    </div>
+    <script src="practice.js"></script>
+</body>
+
+</html>
