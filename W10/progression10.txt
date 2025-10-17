@@ -1,0 +1,136 @@
+ผมใช้ chatgpt ในการ gen โจทย์มาให้แล้วผมก็ทำตามโจทย์ที่ให้มาโดยผมบอกเนื้อหาที่เรียนมา
+
+---
+
+🧩 Week 10 – Self Practice Tasks
+
+ผมจะแบ่งเป็น 3 ชุดหลัก (Cookies / Session Storage / Local Storage)
+แต่ละชุดจะมี Starter HTML ให้พร้อมครับ ❤️
+
+🍪 Part 1: Cookies Practice
+🏗 Starter HTML
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cookies Practice</title>
+</head>
+<body>
+  <h1>🍪 Cookie Practice</h1>
+
+  <input id="cookie-name" placeholder="Cookie name">
+  <input id="cookie-value" placeholder="Cookie value">
+  <button id="set-cookie">Set Cookie</button>
+  <button id="get-cookie">Get Cookie</button>
+  <button id="delete-cookie">Delete Cookie</button>
+
+  <p id="output"></p>
+
+  <script src="cookies.js"></script>
+</body>
+</html>
+
+🎯 Tasks
+
+1. Set Cookie → เมื่อกดปุ่ม "Set Cookie" ให้สร้าง cookie โดยใช้
+
+document.cookie = "username=kritsanaphong; max-age=60";
+
+แต่ใช้ค่าจาก input (cookie-name, cookie-value) แทน
+
+2. Get Cookie → เมื่อกด “Get Cookie” ให้แสดงค่าของ cookie ที่ชื่อที่ผู้ใช้ใส่ไว้ในช่องชื่อ
+
+3. Delete Cookie → เมื่อกด “Delete Cookie” ให้ลบ cookie นั้น
+(โดยตั้ง max-age=0 หรือ expires เป็นวันที่ย้อนหลัง)
+
+💡 Hint:
+document.cookie = "username=krit; max-age=60"; // 60 วินาที
+document.cookie = "username=krit; expires=Thu, 01 Jan 1970 00:00:00 GMT"; // ลบ
+
+🕓 Part 2: Session Storage Practice
+🏗 Starter HTML
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Session Storage Practice</title>
+</head>
+<body>
+  <h1>🕓 Session Storage Practice</h1>
+
+  <input id="session-key" placeholder="Key">
+  <input id="session-value" placeholder="Value">
+  <button id="save-session">Save</button>
+  <button id="get-session">Get</button>
+  <button id="clear-session">Clear</button>
+
+  <p id="output"></p>
+
+  <script src="session.js"></script>
+</body>
+</html>
+
+🎯 Tasks
+
+1. เมื่อกด "Save" → เก็บค่าใน sessionStorage ด้วย setItem(key, value)
+2. เมื่อกด "Get" → ดึงค่าจาก sessionStorage แล้วแสดงใน <p id="output">
+3. เมื่อกด "Clear" → ใช้ sessionStorage.clear() เพื่อล้างทั้งหมด
+
+💡 Hint:
+sessionStorage.setItem('username', 'krit');
+sessionStorage.getItem('username');
+sessionStorage.removeItem('username');
+sessionStorage.clear();
+
+💾 Part 3: Local Storage Practice
+🏗 Starter HTML
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Local Storage Practice</title>
+</head>
+<body>
+  <h1>💾 Local Storage Practice</h1>
+
+  <input id="local-key" placeholder="Key">
+  <input id="local-value" placeholder="Value">
+  <button id="save-local">Save</button>
+  <button id="get-local">Get</button>
+  <button id="delete-local">Delete</button>
+  <button id="clear-local">Clear All</button>
+
+  <p id="output"></p>
+
+  <script src="local.js"></script>
+</body>
+</html>
+
+🎯 Tasks
+
+1. Save Key/Value → ใช้ localStorage.setItem(key, value)
+
+2. Get Key → ใช้ localStorage.getItem(key)
+
+3. Delete Key → ใช้ localStorage.removeItem(key)
+
+4. Clear All → ใช้ localStorage.clear()
+
+5. (Bonus 🌟) → เมื่อโหลดหน้าเว็บ ให้แสดงจำนวนครั้งที่เปิดเว็บโดยนับจาก localStorage
+
+💡 Example:
+let count = localStorage.getItem('visit');
+if (!count) count = 0;
+localStorage.setItem('visit', ++count);
+document.getElementById('output').textContent = `Visited ${count} times.`;
+
+
+🧠 Extra Challenge
+
+สร้างหน้า "Theme Switcher"
+
+ปุ่มสลับโหมด Light / Dark
+
+เก็บค่า theme ไว้ใน localStorage
+
+เมื่อ reload หน้าเว็บ ควรจำ mode เดิมไว้ได้

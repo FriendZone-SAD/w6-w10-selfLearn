@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ตั้งค่าหน้าเว็บด้วย LocalStorage</title>
+    <style>
+        /* CSS พื้นฐานเพื่อจัดรูปแบบเล็กน้อย */
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        .control-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="color"],
+        select {
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button {
+            padding: 10px 15px;
+            margin-right: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        #save-btn {
+            background-color: #4CAF50;
+            /* Green */
+            color: white;
+        }
+
+        #reset-btn {
+            background-color: #f44336;
+            /* Red */
+            color: white;
+        }
+
+        #content-area {
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin-top: 30px;
+            min-height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>ตั้งค่าหน้าเว็บ</h1>
+
+    <form id="settings-form">
+        <div class="control-group">
+            <label for="background-color">1. Background Color</label>
+            <input type="color" id="background-color" name="background-color" value="#ffffff">
+        </div>
+
+        <div class="control-group">
+            <label for="font-color">2. Font color</label>
+            <input type="color" id="font-color" name="font-color" value="#000000">
+        </div>
+
+        <div class="control-group">
+            <label for="font-size">3. Font Size (small, medium, large)</label>
+            <select id="font-size" name="font-size">
+                <option value="small">small</option>
+                <option value="medium" selected>medium</option>
+                <option value="large">large</option>
+            </select>
+        </div>
+
+        <div class="control-group">
+            <button type="submit" id="save-btn">Save</button>
+            <button type="button" id="reset-btn">Reset</button>
+        </div>
+    </form>
+
+    <hr>
+
+    <h2>ตัวอย่างการแสดงผล</h2>
+    <div id="content-area">
+        <p>นี่คือข้อความตัวอย่างที่จะเปลี่ยนสีพื้นหลัง สีตัวอักษร และขนาดตัวอักษร ตามการตั้งค่าที่คุณเลือกและบันทึกไว้
+        </p>
+        <p>คุณสามารถใช้ JavaScript เพื่อดึงค่าที่บันทึกจาก LocalStorage มาปรับใช้กับพื้นที่นี้เมื่อหน้าเว็บโหลดเสร็จ</p>
+    </div>
+    <script src="setting.js"></script>
+</body>
+
+</html>
